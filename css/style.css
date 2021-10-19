@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+ul,
+ol,
+li {
+  list-style: none; }
+
+img {
+  vertical-align: top; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit; }
+
+/*---colors------------------------------------------------*/
+/*---fonts------------------------------------------------*/
+/*---html,body------------------------------------------------*/
+html,
+body {
+  height: 100%;
+  line-height: 1; }
+
+body {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  color: #000; }
+
+/*---------------------------------------------------*/
+.wrapper {
+  /*обёртка*/
+  min-height: 100%;
+  overflow: hidden;
+  /*чтобы небыло горизонтального скрола*/
+  display: flex;
+  flex-direction: column; }
+
+/*---------------------------------------------------*/
+._container {
+  /*технический класс*/
+  max-width: 1214px;
+  /*из макета - ширина контейнера*/
+  margin: 0 auto;
+  /*выстраивает контейнер по центру*/
+  padding: 0 15px;
+  /*предотвращает "прилипание" контента*/
+  box-sizing: content-box;
+  /*либо включаем content-box, либо увеличиваем max-width: 1214px +15*2 */ }
+
+._ibg {
+  position: relative; }
+
+._ibg img {
+  /*_ibg технический класс для настройки отзывчивости картинки, чтобы не ставить фоном, лучше для cms и backend*/
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover; }
+
+/*--main-------------------------------------------------*/
+.page {
+  flex: 1 1 auto; }
+
+/*---top-header-------------------------------------------------*/
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50; }
+
+.header__container {
+  display: flex;
+  min-height: 102px;
+  align-items: center;
+  justify-content: space-between; }
+
+/*----------------------------------------------------*/
+/*---меню-бургер------------------------------------------------*/
+/*скрыть чекбокс*/
+#menu__toggle {
+  opacity: 0; }
+
+/*стилизация кнопки*/
+.menu__btn {
+  display: flex;
+  /*центрирование содержимого*/
+  align-items: center;
+  /*центрирование содержимого кнопки*/
+  justify-content: flex-end;
+  position: fixed;
+  top: 42px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1; }
+
+/*добавляем бургер*/
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  border-radius: 2px;
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 75%;
+  height: 3px;
+  background-color: #212733;
+  transition-duration: .50s; }
+
+#menu__toggle {
+  margin-right: 17px; }
+
+.menu__btn > span::before {
+  width: 125%;
+  content: '';
+  top: -9px; }
+
+.menu__btn > span::after {
+  width: 50%;
+  content: '';
+  top: 9px; }
+
+/*контейнер меню*/
+.menu__box {
+  width: 40%;
+  /*смещение*/
+  transition-duration: .50s; }
+
+.menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  /*menu по умолчанию скрыто*/
+  top: 0;
+  right: -100%;
+  height: auto;
+  margin: 0;
+  padding: 160px 0 70px 80px;
+  text-align: left;
+  background-color: #191A1E;
+  transition-delay: .50s; }
+
+@media (max-width: 992px) {
+  .menu__box {
+    width: 50%;
+    /*смещение*/ } }
+@media (max-width: 767px) {
+  .menu__box {
+    width: 60%;
+    /*смещение*/ }
+
+  .menu__box {
+    padding: 160px 0 70px 60px; } }
+@media (max-width: 589px) {
+  .menu__box {
+    width: 100%;
+    /*смещение*/ }
+
+  .menu__box {
+    padding: 160px 0 70px 30px; } }
+/*элементы меню*/
+.menu__item {
+  display: block;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 122.2%;
+  transition-duration: .50s;
+  padding: 0; }
+
+.hr-line {
+  margin: 20px 0;
+  padding: 0;
+  height: 0;
+  border: none;
+  border-top: 1px solid #333; }
+
+.menu__item:hover {
+  color: #fff; }
+
+/*открыть/закрыть меню*/
+#menu__toggle:checked ~ .menu__btn {
+  left: 65%; }
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+  width: 100%;
+  color: #fff; }
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+  width: 100%;
+  color: rgba(255, 255, 255, 0.3); }
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  width: 100%;
+  color: rgba(255, 255, 255, 0.3); }
+
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  right: 0; }
+
+/*---черта--------------------*/
+.hr-line {
+  width: 40%;
+  height: 1px;
+  margin-top: 70px;
+  margin-bottom: 210px; }
+
+/*---кнопка--------------------*/
+.buttonGradient {
+  display: block;
+  font-weight: bold;
+  padding: 20px 30px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #074D88 0%, #61B3C9 100%);
+  color: #fff;
+  margin-bottom: 130px; }
+  .buttonGradient span {
+    margin-left: 70px;
+    width: 12px;
+    height: 12px; }
+
+@media (max-width: 767px) {
+  .buttonGradient > span {
+    margin-left: 50px; } }
+@media (max-width: 589px) {
+  .buttonGradient {
+    padding: 20px;
+    font-size: 20px; }
+
+  .buttonGradient > span {
+    margin-left: 15px; } }
+/*---меню соцсети--------------*/
+.menu__item_soc {
+  display: flex; }
+
+.soc__item:not(last-child) {
+  margin-right: 12px;
+  height: 30px;
+  width: 30px; }
+
+/*end menu*/
+/*---кнопка--------------------*/
+.main-block {
+  position: relative; }
+
+.main-block__body {
+  padding: 250px 0 528px 0;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+@media (max-width: 767px) {
+  .main-block__body {
+    padding: 220px 0 400px 0; } }
+.main-block__title {
+  padding: 0px 0 20px 0; }
+  @media (max-width: 589px) {
+    .main-block__title {
+      font-size: 60px; } }
+  @media (max-width: 479px) {
+    .main-block__title {
+      font-size: 40px; } }
+
+.main-block__text {
+  padding: 0px 0 60px 0; }
+
+.main-block__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+/*--footer-------------------------------------------------*/
+._button {
+  display: block;
+  font-weight: bold;
+  padding: 20px 30px;
+  text-decoration: none;
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
+  /* Параметры рамки */ }
+  ._button span {
+    margin-left: 70px;
+    width: 12px;
+    height: 12px; }
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 74px;
+  line-height: 121.6%; }
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 121.9%; }
+
+h3 {
+  font-family: "Montserrat", sans-serif; }
+
+h4 {
+  font-family: "Montserrat", sans-serif; }
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%; }
+
+/*# sourceMappingURL=style.css.map */
