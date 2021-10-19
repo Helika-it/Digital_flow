@@ -106,7 +106,7 @@ body {
   align-items: center;
   /*центрирование содержимого кнопки*/
   justify-content: flex-end;
-  position: fixed;
+  position: absolute;
   top: 42px;
   width: 30px;
   height: 30px;
@@ -141,13 +141,13 @@ body {
 
 /*контейнер меню*/
 .menu__box {
-  width: 40%;
-  /*смещение*/
+  width: 751px;
+  /*ширина меню*/
   transition-duration: .25s; }
 
 .menu__box {
   display: block;
-  position: fixed;
+  position: absolute;
   visibility: hidden;
   /*menu по умолчанию скрыто*/
   top: 0;
@@ -161,21 +161,15 @@ body {
 
 @media (max-width: 992px) {
   .menu__box {
-    width: 50%;
-    /*смещение*/ } }
+    width: 440px;
+    /*ширина меню*/ } }
 @media (max-width: 767px) {
-  .menu__box {
-    width: 60%;
-    /*смещение*/ }
-
   .menu__box {
     padding: 160px 0 70px 60px; } }
 @media (max-width: 589px) {
   .menu__box {
     width: 100%;
-    /*смещение*/ }
-
-  .menu__box {
+    /*смещение*/
     padding: 160px 0 70px 30px; } }
 /*элементы меню*/
 .menu__item {
@@ -200,7 +194,7 @@ body {
 
 /*открыть/закрыть меню*/
 #menu__toggle:checked ~ .menu__btn {
-  left: 65%;
+  right: 649px;
   transition-delay: 0.25s; }
 
 #menu__toggle:checked ~ .menu__btn > span {
@@ -238,7 +232,7 @@ body {
   margin-top: 70px;
   margin-bottom: 210px; }
 
-/*---кнопка--------------------*/
+/*---кнопка Градиент--------------*/
 .buttonGradient {
   display: block;
   font-weight: bold;
@@ -253,21 +247,30 @@ body {
     height: 12px; }
 
 .buttonGradient:hover {
-  background: linear-gradient(90deg, #61B3C9 0%, #074D88 100%); }
+  background: linear-gradient(90deg, #074e88c8 0%, #61b2c9b5 100%); }
 
+@media (max-width: 992px) {
+  #menu__toggle:checked ~ .menu__btn {
+    right: 334px; } }
 @media (max-width: 767px) {
   .buttonGradient > span {
     margin-left: 50px; }
 
+  .hr-line {
+    margin-bottom: 75px; }
+
   #menu__toggle:checked ~ .menu__btn {
-    left: 0; } }
+    right: 354px; } }
 @media (max-width: 589px) {
   .buttonGradient {
     padding: 20px;
     font-size: 20px; }
 
   .buttonGradient > span {
-    margin-left: 15px; } }
+    margin-left: 15px; }
+
+  #menu__toggle:checked ~ .menu__btn {
+    left: 30px; } }
 /*---меню соцсети--------------*/
 .menu__item_soc {
   display: flex; }
