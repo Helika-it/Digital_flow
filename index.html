@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital flow</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container _container">
+        <a href="" class="header__logo">
+          <img src="./img/header/header_logo.png" alt="Digital flow">
+        </a>
+        <nav class="header__menu burger-menu">
+          <input id="menu__toggle" type="checkbox" />
+          <label for="menu__toggle" class="menu__btn">
+            <span></span>
+          </label>
+
+          <ul class="menu__box">
+            <li><a class="menu__item" href="#">Главная</a></li>
+            <li><a class="menu__item" href="#">О компании</a></li>
+            <li><a class="menu__item" href="#">Портфолио</a></li>
+            <li><a class="menu__item" href="#">Что мы предлагаем</a></li>
+            <li><a class="menu__item" href="#">Специальное предложение</a></li>
+            <li class="menu__item">
+              <hr class="hr-line">
+            </li>
+            <li><button class="menu__item  buttonGradient" href="#">Оставить заявку<span>&#707</span></button>
+            </li>
+            <ul class="menu__item_soc soc">
+              <li><a class="soc__item" href="#">
+                  <img src="./img/header/1tg.svg" alt="telegram">
+                </a></li>
+              <li><a class="soc__item" href="#">
+                  <img src="./img/header/2vk.svg" alt="vkontakte">
+                </a></li>
+              <li><a class="soc__item" href="#">
+                  <img src="./img/header/3is.svg" alt="insagram">
+                </a></li>
+              <li><a class="soc__item" href="#">
+                  <img src="./img/header/4em.svg" alt="email">
+                </a></li>
+              <li><a class="soc__item" href="#">
+                  <img src="./img/header/5ph.svg" alt="phone">
+                </a></li>
+            </ul>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+    <main class="page">
+      <div class="page__main-block main-block">
+        <div class="main-block__container _container">
+          <div class="main-block__body">
+            <h1 class="main-block__title">web applications</h1>
+            <div class="main-block__text">
+              Повседневная практика.
+            </div>
+            <div class="main-block__buttons">
+              <button href="" class="main-block__button _button">Спец предложение<span>&#707</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="main-block__image _ibg">
+          <img src="./img/header/cover.jpg" alt="cover">
+        </div>
+      </div>
+
+      <section class="page__compani compani">
+        <div class="compani__container _container">
+          <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="./img/compani/Slider1.jpg" class="d-block w-100" alt="Slider1">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Метка первого слайда</h5>
+                  <p>Некоторый репрезентативный заполнитель для первого слайда.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="./img/compani/Slider1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Метка второго слайда</h5>
+                  <p>Некоторый репрезентативный заполнитель для второго слайда.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="./img/compani/Slider1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Метка третьего слайда</h5>
+                  <p>Некоторый репрезентативный заполнитель для третьего слайда.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Следующий</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      Подвал
+    </footer>
+  </div>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
