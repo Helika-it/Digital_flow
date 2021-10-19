@@ -99,7 +99,7 @@ body {
 #menu__toggle {
   opacity: 0; }
 
-/*стилизация кнопки*/
+/*стилизация кнопки бургер*/
 .menu__btn {
   display: flex;
   /*центрирование содержимого*/
@@ -124,7 +124,7 @@ body {
   width: 75%;
   height: 3px;
   background-color: #212733;
-  transition-duration: .50s; }
+  transition-duration: 0.25s; }
 
 #menu__toggle {
   margin-right: 17px; }
@@ -143,7 +143,7 @@ body {
 .menu__box {
   width: 40%;
   /*смещение*/
-  transition-duration: .50s; }
+  transition-duration: .25s; }
 
 .menu__box {
   display: block;
@@ -157,7 +157,7 @@ body {
   padding: 160px 0 70px 80px;
   text-align: left;
   background-color: #191A1E;
-  transition-delay: .50s; }
+  transition-duration: .25s; }
 
 @media (max-width: 992px) {
   .menu__box {
@@ -185,7 +185,7 @@ body {
   font-weight: 500;
   font-size: 18px;
   line-height: 122.2%;
-  transition-duration: .50s;
+  transition-duration: .25s;
   padding: 0; }
 
 .hr-line {
@@ -200,28 +200,36 @@ body {
 
 /*открыть/закрыть меню*/
 #menu__toggle:checked ~ .menu__btn {
-  left: 65%; }
+  left: 65%;
+  transition-delay: 0.25s; }
 
 #menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
   width: 100%;
-  color: #fff; }
+  background-color: rgba(255, 255, 255, 0.3); }
+
+#menu__toggle:checked:hover ~ .menu__btn > span {
+  background-color: #fff; }
 
 #menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
   transform: rotate(0);
   width: 100%;
-  color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0); }
 
 #menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
   width: 100%;
-  color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0.3); }
+
+#menu__toggle:checked:hover ~ .menu__btn > span::after {
+  background-color: #fff; }
 
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
-  right: 0; }
+  right: 0;
+  transition-duration: 0.25s; }
 
 /*---черта--------------------*/
 .hr-line {
@@ -244,9 +252,15 @@ body {
     width: 12px;
     height: 12px; }
 
+.buttonGradient:hover {
+  background: linear-gradient(90deg, #61B3C9 0%, #074D88 100%); }
+
 @media (max-width: 767px) {
   .buttonGradient > span {
-    margin-left: 50px; } }
+    margin-left: 50px; }
+
+  #menu__toggle:checked ~ .menu__btn {
+    left: 0; } }
 @media (max-width: 589px) {
   .buttonGradient {
     padding: 20px;
@@ -264,7 +278,7 @@ body {
   width: 30px; }
 
 /*end menu*/
-/*---кнопка--------------------*/
+/*-----------------------*/
 .main-block {
   position: relative; }
 
@@ -301,7 +315,7 @@ body {
   left: 0; }
 
 /*--footer-------------------------------------------------*/
-._button {
+button._button {
   display: block;
   font-weight: bold;
   padding: 20px 30px;
@@ -309,11 +323,17 @@ body {
   background: transparent;
   color: #000;
   border: 1px solid #000;
-  /* Параметры рамки */ }
-  ._button span {
+  /* Параметры рамки */
+  transition-duration: 0.25s; }
+  button._button span {
     margin-left: 70px;
     width: 12px;
     height: 12px; }
+
+button._button:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg, #acc4de72 0%, #acc4de28 100%);
+  box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5); }
 
 h1 {
   font-family: "Montserrat", sans-serif;
